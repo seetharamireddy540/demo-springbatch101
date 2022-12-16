@@ -1,15 +1,20 @@
 package example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayApp {
     public static void main(String[] args) {
-        int[] data = {1, 6, 3, 0, 5, 1};
-        int subArrayLength = 13;
-        int maxSubArraySum = findMinSubArrayLength(data, subArrayLength);
-        System.out.printf("maxSubArraySum = " + maxSubArraySum);
+        int[] data = {1, 6, 3, 0, 5, 9};
+        int subArrayLength = 3;
+        int maxSubArraySum = fixMaxSubArraySum(data, subArrayLength);
+        System.out.println("maxSubArraySum = " + maxSubArraySum);
     }
 
-    private static int findMinSubArrayLength(int[] data, int subArrayLength) {
+    private static int fixMaxSubArraySum(int[] data, int subArrayLength) {
 
+        int startIndex = 0;
+        int endIndex = subArrayLength - 1;
         if (data == null || subArrayLength > data.length) {
             return -1;
         }
@@ -20,10 +25,15 @@ public class ArrayApp {
         }
         maxSubArraySum = currentSubArraySum;
         for (int i = 1; i < data.length - subArrayLength + 1; i++) {
-            currentSubArraySum = currentSubArraySum - data[i - 1];
-            currentSubArraySum = currentSubArraySum + data[i + subArrayLength - 1];
-            maxSubArraySum = Math.max(maxSubArraySum, currentSubArraySum);
+            currentSubArraySum = currentSubArraySum - data[i-1] + data[i + subArrayLength - 1];
+            if (maxSubArraySum < currentSubArraySum) {
+                startIndex = i;
+                endIndex = i + startIndex - 1;
+                maxSubArraySum = currentSubArraySum;
+            }
+//            maxSubArraySum = Math.max(maxSubArraySum, currentSubArraySum);
         }
+        System.out.println("Sub Array StartIndex=" + startIndex + " EndIndex=" + endIndex);
 
         return maxSubArraySum;
     }
