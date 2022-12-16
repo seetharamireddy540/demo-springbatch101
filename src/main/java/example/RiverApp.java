@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class RiverApp {
     public static Set<String> visitedSet = new HashSet<>();
-    public static List<Integer> riverLengths = new ArrayList<>();
     public static int[][] directions8 = {{-1, 0}, // North
             {-1, 1}, // North-East
             {0, 1}, // East
@@ -25,11 +24,14 @@ public class RiverApp {
 
     public static void main(String[] args) {
         int[][] data = {{1, 1, 0, 0, 0}, {0, 1, 0, 0, 0}, {1, 0, 0, 1, 0}, {0, 1, 0, 0, 0}};
+        List<Integer> riverLengths = extracted(data);
+    }
 
+    private static List<Integer> extracted(int[][] data) {
         int rows = data.length;
         int columns = data[0].length;
         String positionStr = null;
-
+        List<Integer> riverLengths = new ArrayList<>();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 positionStr = i + "-" + j;
@@ -40,6 +42,7 @@ public class RiverApp {
         }
 
         riverLengths.stream().forEach(System.out::println);
+        return riverLengths;
     }
 
     private static int findRiverLength(int[][] data, int i, int j, int currentRiverLength) {
