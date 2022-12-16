@@ -1,7 +1,5 @@
-package example;
+package com.example.batchprocessing;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ArrayApp {
     public static void main(String[] args) {

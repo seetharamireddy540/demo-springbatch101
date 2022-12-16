@@ -1,4 +1,4 @@
-package example;
+package com.example.batchprocessing;
 
 public class Employee {
     private Long id;

@@ -1,4 +1,4 @@
-package com.ram.designpatterns;
+package com.example.batchprocessing.ram.designpatterns;
 
 public abstract class Pizza {
     private String name;

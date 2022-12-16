@@ -1,4 +1,4 @@
-package example;
+package com.example.batchprocessing;
 
 import java.util.ArrayList;
 import java.util.HashSet;

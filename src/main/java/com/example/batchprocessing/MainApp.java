@@ -1,4 +1,4 @@
-package example;
+package com.example.batchprocessing;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
