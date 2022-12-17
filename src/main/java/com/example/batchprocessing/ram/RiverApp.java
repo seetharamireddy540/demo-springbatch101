@@ -1,4 +1,4 @@
-package com.example.batchprocessing;
+package com.example.batchprocessing.ram;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,4 +1,6 @@
-package com.example.batchprocessing;
+package com.example.batchprocessing.ram;
+
+import com.example.batchprocessing.ram.Employee;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

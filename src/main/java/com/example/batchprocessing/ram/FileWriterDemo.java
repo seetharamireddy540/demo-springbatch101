@@ -1,4 +1,4 @@
-package com.example.batchprocessing;
+package com.example.batchprocessing.ram;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
